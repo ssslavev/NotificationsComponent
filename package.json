@@ -1,0 +1,25 @@
+{
+  "name": "notificationscomponent",
+  "version": "1.0.0",
+  "description": "Simple notifications component",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssslavev/NotificationsComponent.git"
+  },
+  "author": "S.Slavev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ssslavev/NotificationsComponent/issues"
+  },
+  "homepage": "https://github.com/ssslavev/NotificationsComponent#readme",
+  "dependencies": {
+    "express": "^4.17.0",
+    "handlebars": "^4.1.2",
+    "mongodb": "^3.2.4",
+    "socket.io": "^2.2.0"
+  }
+}

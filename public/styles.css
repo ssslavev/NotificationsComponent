@@ -1,0 +1,84 @@
+html,
+body,
+div,
+img,
+a,
+input,
+select,
+option,
+form {
+  padding: 0;
+  margin: 0;
+}
+
+
+/* My Button */
+
+img {
+    max-width: 100%;
+}
+
+#notif-btn {
+    background-color: #aaa;
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+    margin-top: 20px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    position: relative;
+}
+
+#notif-btn i {
+    color: #0074D9;
+    font-size: 30px;
+}
+
+#notif-btn:hover {
+    box-shadow: 0 5px 10px rgba(0,0,0,.3);
+    transform: scale(1.1);
+    
+}
+
+#notif-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px 9px;
+    border-radius: 30px;
+    background: #FF4136;
+    color: white;
+    line-height: 1;
+  }
+
+  #collapseExample {
+      width: 60%;
+      margin-top: 12px;
+  }
+
+  #promo-img {
+     margin-bottom: 10px;
+  }
+
+  .card-title {
+      margin-bottom: 5px !important;
+  }
+
+  .card-body {
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+  }
+
+  .card-header {
+      position: relative;
+      text-transform: uppercase;
+      background-color: #FF4136 !important;
+      color: #fff;
+      font-weight: bold;
+      border-top-left-radius: 10px !important;
+      border-top-right-radius: 10px !important; 
+  }
+
+  
+
+
