@@ -1,4 +1,4 @@
-let socket = io.connect('http://localhost:4001/');
+let socket = io.connect('https://notifications-component.herokuapp.com/');
 
 if (socket) {
 
