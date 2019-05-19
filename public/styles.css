@@ -79,6 +79,18 @@ img {
       border-top-right-radius: 10px !important; 
   }
 
+  h3 {
+      margin-top: 20px !important;
+  }
+
+  form {
+      margin-top: 20px;
+  }
+
+  button:disabled {
+      cursor: not-allowed
+  }
+
   
 
 

@@ -9,7 +9,10 @@ const server = app.listen(port, () => {
     console.log(`server is running on port ${port}`);
 })
 
+
+
 app.use(express.static('public'));
+
 
 const io = socket(server);
 
@@ -19,25 +22,13 @@ mongo.connect(connectionString, { useNewUrlParser: true }, (err, client) => {
         throw err;
     }
 
-    let db = client.db('notifications');
-
-    console.log('MongoDb is connected!');
+    //console.log('MongoDb is connected!');
     //Conect to Socket.io
     io.on('connection', (socket) => {
 
-
-        sendStatus = (s) => {
-            socket.emit(s);
-        }
-
-        let stream = db.collection('notifications').watch();
-
-        stream.on('change', (change) => {
-            console.log(change);
-        })
+        let db = client.db('notifications');
 
         db.collection('notifications').find({}).toArray((err, result) => {
-
             if (err) {
                 throw err;
             }
@@ -46,12 +37,29 @@ mongo.connect(connectionString, { useNewUrlParser: true }, (err, client) => {
 
         });
 
+        socket.on('input', (data) => {
+            if (data.type == 'text') {
+
+                let { type, title, text, expires } = data;
+                db.collection('notifications').insertOne({ type: type, title: title, text: text, expires: expires }, () => {
+                    socket.emit('notifications', [data]);
+                })
+            } else if (data.type == 'bonus') {
+
+                let { type, title, requirement, expires } = data;
+                db.collection('notifications').insertOne({ type: type, title: title, requirement: requirement, expires: expires }, () => {
+                    socket.emit('notifications', [data]);
+                })
+            } else if (data.type == 'Promotion') {
+
+                let { type, title, image, link } = data;
+                db.collection('notifications').insertOne({ type: type, title: title, image: image, link: link }, () => {
+                    socket.emit('notifications', [data]);
+                })
+            }
 
 
-
-        //db.collection('notifications').findOne({}, { sort: { $natural: -1 } }).then(res => {
-        //    console.log(res);
-        // });
+        })
 
     })
 

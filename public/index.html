@@ -9,12 +9,65 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="./images/favicon.png">
     <title>Notifications</title>
 </head>
 
 <body>
     <div id="wrapper">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Add notification to list</h3>
+                    <form action="">
+                        <div class="form-group">
+                            <select id="inputState" class="form-control">
+                                <option selected disabled>Choose type</option>
+                                <option>bonus</option>
+                                <option>Promotion</option>
+                                <option>text</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input id="title" type="text" class="form-control" name="title" placeholder="Title">
+                        </div>
+                        <div class="form-group">
+                            <input id="text" type="text" class="form-control" name="text" placeholder="Text">
+                        </div>
+                        <div class="form-group">
+                            <input id="expires" type="text" class="form-control" name="expires"
+                                placeholder="Expires(in miliseconds, exaple: 5000)">
+                        </div>
+                        <div class="form-group">
+                            <input id="requirement" type="text" class="form-control" name="requirement"
+                                placeholder="Recuirement">
+                        </div>
+                        <div class="form-group">
+                            <input id="image" type="text" class="form-control" name="image" placeholder="Image">
+                        </div>
+                        <div class="form-group">
+                            <input id="link" type="text" class="form-control" name="link" placeholder="Link">
+                        </div>
+                        <button id="btn-clear" class="btn btn-danger">Clear</button>
+                        <button id="btn-submit" class="btn btn-primary">Send</button>
+                    </form>
+                </div>
 
+                <div class="col-md-6">
+                    <button id="notif-btn" class="btn" type="button" data-toggle="collapse"
+                        data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <span id="notif-badge"></span>
+                        <i class="fa fa-bell"></i>
+                    </button>
+                    <div class="collapse mx-auto" id="collapseExample">
+                        <div class="card-header text-left">
+                            Notifications
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
