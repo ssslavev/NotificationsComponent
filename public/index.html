@@ -13,47 +13,9 @@
 </head>
 
 <body>
-    <div id="wrapper"></div>
+    <div id="wrapper">
 
-    <script id="notif-template" type="text/x-handlebars-template">
-    <div class="container text-center">
-        <div class="row justify-content-md-center">
-            <div class="col-lg-6">
-                <button id="notif-btn" class="btn" type="button" data-toggle="collapse" data-target="#collapseExample"
-                    aria-expanded="false" aria-controls="collapseExample">
-                    <span id="notif-badge"></span>
-                    <i class="fa fa-bell"></i>
-                </button>
-                <div class="collapse mx-auto" id="collapseExample">
-                    <div class="card-header text-left">
-                        Notifications
-                    </div>
-                    {{#each data}}
-                    {{#ifvalue type equals="text"}}
-                    <div data-type={{type}} data-info={{expires}} id="{{_id}}" class="card card-body">
-                        <h6 class="card-title">{{title}}</h6>
-                        <p class="card-text">{{text}}</p>
-                    </div>
-                    {{/ifvalue}}
-                    {{#ifvalue type equals="Promotion"}}
-                    <div data-type={{type}}  class="card card-body" id="{{_id}}" data-info={{expires}}>
-                        <img width="36" src="{{image}}" id="promo-img" class="mx-auto">
-                        <h6 class="card-title">{{title}}</h6>
-                        <a href="{{link}}" class="card-link">{{link}}</a>
-                    </div>
-                    {{/ifvalue}}
-                    {{#ifvalue type equals="bonus"}}
-                    <div data-type={{type}} data-info={{expires}} id="{{_id}}" class="card card-body">
-                        <h6 class="card-title">{{title}}</h6>
-                        <p class="card-text">{{requirement}}</p>    
-                    </div>
-                    {{/ifvalue}}
-                    {{/each}}
-                </div>
-            </div>
-        </div>
     </div>
-    </script>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -66,7 +28,9 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.js"></script>
+
     <script src="./scripts/handlebars.helper.js"></script>
+    <script src="./scripts/tmplRequester.js"></script>
     <script src="./index.js"></script>
 
 
