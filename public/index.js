@@ -19,7 +19,7 @@ if (socket) {
 
                         setTimeout(() => {
 
-                            $(this).hide(2500, function () { $(this).remove() })
+                            $(this).hide(1000, function () { $(this).remove() })
                             if ($(this).data('type') != 'bonus') {
                                 notifCount--;
                             }
