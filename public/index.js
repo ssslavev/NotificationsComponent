@@ -19,7 +19,7 @@ if (socket) {
 
                         setTimeout(() => {
 
-                            $(this).remove();
+                            $(this).hide(2500, function () { $(this).remove() })
                             if ($(this).data('type') != 'bonus') {
                                 notifCount--;
                             }
@@ -71,71 +71,20 @@ if (socket) {
                         $('#btn-clear').show();
                     }
 
-
+                    $('#expires').val('');
+                    $('#requirement').val('');
+                    $('#title').val('');
+                    $('#image').val('');
+                    $('#link').val('');
+                    $('#title').val('');
+                    $('#text').val('');
+                    $('#btn-submit').attr('disabled', true);
                 })
             })
     });
 
-    /* $(document).ready(function () {
-        $('form input').keyup(function () {
-
-            var empty = false;
-            $('form input').each(function () {
-                console.log($(this));
-                if ($(this).val().length == 0) {
-                    empty = true;
-                }
-            });
-            console.log(empty);
-
-            if (empty) {
-                $('#btn-submit').attr('disabled', true);
-            } else {
-                $('#btn-submit').attr('disabled', false);
-            }
-        });
-    }); */
-
-    $('#btn-submit').on('click', function () {
 
 
-
-        if ($('#inputState').val() == 'text') {
-            socket.emit('input', {
-                type: $('#inputState').val(),
-                title: $('#title').val(),
-                text: $('#text').val(),
-                expires: $('#expires').val()
-            });
-        } else if ($('#inputState').val() == 'bonus') {
-            socket.emit('input', {
-                type: $('#inputState').val(),
-                title: $('#title').val(),
-                requirement: $('#requirement').val(),
-                expires: $('#expires').val()
-            });
-        } else if ($('#inputState').val() == 'Promotion') {
-            socket.emit('input', {
-                type: $('#inputState').val(),
-                title: $('#title').val(),
-                image: $('#image').val(),
-                link: $('#link').val()
-            });
-        }
-
-
-        $("form")[0].reset();
-        event.preventDefault();
-    });
-
-    $('#btn-clear').on('click', function () {
-        $('#title').val('')
-        $('#image').val('')
-        $('#link').val('')
-        $('#expires').val('')
-        $('#requirement').val('')
-        event.preventDefault();
-    });
 
 
 } else {
