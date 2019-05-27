@@ -1,4 +1,4 @@
-const connectionString = 'mongodb+srv://ssslavev:Taekwondo89$@notifications-cjvuz.gcp.mongodb.net/test?retryWrites=true';
+const connectionString = process.env.DATABASE_URL;
 const port = process.env.PORT || 4001;
 
 
