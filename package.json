@@ -18,7 +18,7 @@
   "homepage": "https://github.com/ssslavev/NotificationsComponent#readme",
   "dependencies": {
     "express": "^4.17.0",
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.7.7",
     "mongodb": "^3.2.4",
     "socket.io": "^2.2.0"
   }
